@@ -1,0 +1,25 @@
+#
+# cclogic devices for type-C connector
+#
+menuconfig CCLOGIC
+	tristate "cclogic devices for Type-C connector"
+	depends on I2C
+	help
+	  This is cclogic devices for Type-C connector.
+
+if CCLOGIC
+
+config TYPEC_CCLOGIC_PI5USBD
+	depends on I2C
+	tristate "Pericom Pi5usb30216d Support"
+	---help---
+	  The Pericom pi5usb30216d chip is used as cc-logic of TYPEC 
+	  interface.
+
+config TYPEC_CCLOGIC_TUSB320HAI
+	depends on I2C
+	tristate "TI TUSB320Hai Support"
+	---help---
+	  The TI tusb320hai chip is used as cc-logic of TYPEC 
+
+endif # CCLOGIC
